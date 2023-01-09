@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:HangMan.ViewModels"
+             x:Class="HangMan.MainPage"
+             x:DataType="viewmodel:MainViewModel"
+             x:Name="ContentPage"
+             Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+             Title="{Binding Terminology.Title}">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False" IsEnabled="False" />
+    </Shell.BackButtonBehavior>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="20"
+            VerticalOptions="Center">
+
+            <Label
+                Text="{Binding Terminology.Title}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="HangMan"
+                FontSize="18"
+                HorizontalOptions="Center" 
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+            
+            <Label
+                Text="{Binding Terminology.Welcome}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to my HangMan application"
+                FontSize="17"
+                HorizontalOptions="Center" 
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+            <Button
+                x:Name="Online"
+                Text="Online"
+                SemanticProperties.Hint="Starts the hangman game Online"
+                Command="{Binding NavigateOnlineCommand}"
+                HorizontalOptions="Center" 
+                Background="#512BD4"
+                Padding="15"
+                TextColor="White" />
+            
+            <Label
+                Text="{Binding Terminology.LanguageLabel}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Select a language"
+                FontSize="17"
+                HorizontalOptions="Center" 
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+            
+                <Button
+                    x:Name="English"
+                    Text="{Binding Terminology.English}"
+                    SemanticProperties.Hint="Changes the UI language to English"
+                    Command="{Binding LanguageToEnglishCommand}"
+                    HorizontalOptions="Center"
+                    Margin="5"
+                    WidthRequest="110"
+                    HeightRequest="50"
+                    Background="#512BD4"
+                    TextColor="White" />
+
+                <Button
+                    x:Name="Greek"
+                    Text="{Binding Terminology.Greek}"
+                    SemanticProperties.Hint="Changes the UI language to Greek"
+                    Command="{Binding LanguageToGreekCommand}"
+                    HorizontalOptions="Center" 
+                    Margin="5"
+                    WidthRequest="110"
+                    HeightRequest="50"
+                    Background="#512BD4"
+                    TextColor="White" />
+
+            </HorizontalStackLayout>
+
+            <Label
+                Text="{Binding Terminology.CheckBox}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Check this to fill your own word"
+                FontSize="16"
+                HorizontalOptions="Center" 
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+            <CheckBox
+                x:Name="CheckBox"
+                IsChecked="{Binding Terminology.Checked}"
+                CheckedChanged="OnCheckBoxChanged"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="{Binding Terminology.StrLabel}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Word will start from"
+                FontSize="16"
+                HorizontalOptions="Center"
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+                <Entry 
+                x:Name="StrEntry"
+                IsPassword="{Binding Terminology.Checked}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="fill this if you want to customize the given word"
+                TextChanged="StrEntry_TextChanged"
+                FontSize="14"
+                HorizontalOptions="Center" 
+                Background="#512BD4"
+                WidthRequest="110"
+                TextColor="White"
+                HorizontalTextAlignment="Center" />
+
+            <Button
+                x:Name="StartGame"
+                Text="{Binding Terminology.Start}"
+                SemanticProperties.Hint="Starts the hangman game"
+                Command="{Binding NavigateCommand}"
+                HorizontalOptions="Center" 
+                Background="#512BD4"
+                Padding="15"
+                TextColor="White" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

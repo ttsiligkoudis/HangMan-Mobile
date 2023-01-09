@@ -1,0 +1,3 @@
+C:\Users\ThemisTsiligkoudis\Desktop\HangMan\bin\Release\net6.0-android\publish\com.companyname.hangman-Signed.aab
+C:\Users\ThemisTsiligkoudis\Desktop\HangMan\bin\Release\net6.0-android\publish\com.companyname.hangman.aab
+C:\Users\ThemisTsiligkoudis\Desktop\HangMan\bin\Release\net6.0-android\publish\com.companyname.hangman-Signed.apk
