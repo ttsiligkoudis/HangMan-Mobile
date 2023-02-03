@@ -10,17 +10,71 @@
         <member name="P:HangMan.ViewModels.GameViewModel.Language">
             <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.language"/>
         </member>
-        <member name="P:HangMan.ViewModels.GameViewModel.IsChecked">
-            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.isChecked"/>
-        </member>
         <member name="P:HangMan.ViewModels.GameViewModel.WordStr">
             <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.wordStr"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.GameType">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.gameType"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.UserName">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.userName"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.ConnectionID">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.connectionID"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.ChatMessages">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.chatMessages"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.MyChatMessage">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.myChatMessage"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.LivesLabel">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.livesLabel"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.ImageSource">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.imageSource"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.IsLoading">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.isLoading"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.WordArea">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.wordArea"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.FirstRow">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.firstRow"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.SecondRow">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.secondRow"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.ThirdRow">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.thirdRow"/>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.WordList">
+            <inheritdoc cref="F:HangMan.ViewModels.GameViewModel.wordList"/>
         </member>
         <member name="F:HangMan.ViewModels.GameViewModel.backCommand">
             <summary>The backing field for <see cref="P:HangMan.ViewModels.GameViewModel.BackCommand"/>.</summary>
         </member>
         <member name="P:HangMan.ViewModels.GameViewModel.BackCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.GameViewModel.Back"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.GameViewModel.Back"/>.</summary>
+        </member>
+        <member name="F:HangMan.ViewModels.GameViewModel.sendMessageCommand">
+            <summary>The backing field for <see cref="P:HangMan.ViewModels.GameViewModel.SendMessageCommand"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.SendMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.GameViewModel.SendMessage"/>.</summary>
+        </member>
+        <member name="F:HangMan.ViewModels.GameViewModel.resetGameCommand">
+            <summary>The backing field for <see cref="P:HangMan.ViewModels.GameViewModel.ResetGameCommand"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.ResetGameCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.GameViewModel.ResetGame"/>.</summary>
+        </member>
+        <member name="F:HangMan.ViewModels.GameViewModel.copyIDCommand">
+            <summary>The backing field for <see cref="P:HangMan.ViewModels.GameViewModel.CopyIDCommand"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.GameViewModel.CopyIDCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.GameViewModel.CopyID"/>.</summary>
         </member>
         <member name="P:HangMan.ViewModels.MainViewModel.Terminology">
             <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.terminology"/>
@@ -28,29 +82,65 @@
         <member name="P:HangMan.ViewModels.MainViewModel.Language">
             <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.language"/>
         </member>
-        <member name="P:HangMan.ViewModels.MainViewModel.IsChecked">
-            <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.isChecked"/>
-        </member>
         <member name="P:HangMan.ViewModels.MainViewModel.WordStr">
             <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.wordStr"/>
         </member>
-        <member name="F:HangMan.ViewModels.MainViewModel.languageToEnglishCommand">
-            <summary>The backing field for <see cref="P:HangMan.ViewModels.MainViewModel.LanguageToEnglishCommand"/>.</summary>
+        <member name="P:HangMan.ViewModels.MainViewModel.GameType">
+            <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.gameType"/>
         </member>
-        <member name="P:HangMan.ViewModels.MainViewModel.LanguageToEnglishCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.MainViewModel.LanguageToEnglish"/>.</summary>
+        <member name="P:HangMan.ViewModels.MainViewModel.IsLoading">
+            <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.isLoading"/>
         </member>
-        <member name="F:HangMan.ViewModels.MainViewModel.languageToGreekCommand">
-            <summary>The backing field for <see cref="P:HangMan.ViewModels.MainViewModel.LanguageToGreekCommand"/>.</summary>
-        </member>
-        <member name="P:HangMan.ViewModels.MainViewModel.LanguageToGreekCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.MainViewModel.LanguageToGreek"/>.</summary>
+        <member name="P:HangMan.ViewModels.MainViewModel.WordList">
+            <inheritdoc cref="F:HangMan.ViewModels.MainViewModel.wordList"/>
         </member>
         <member name="F:HangMan.ViewModels.MainViewModel.navigateCommand">
             <summary>The backing field for <see cref="P:HangMan.ViewModels.MainViewModel.NavigateCommand"/>.</summary>
         </member>
         <member name="P:HangMan.ViewModels.MainViewModel.NavigateCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.MainViewModel.Navigate"/>.</summary>
+        </member>
+        <member name="F:HangMan.ViewModels.MainViewModel.navigateOnlineCommand">
+            <summary>The backing field for <see cref="P:HangMan.ViewModels.MainViewModel.NavigateOnlineCommand"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.MainViewModel.NavigateOnlineCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.MainViewModel.NavigateOnline"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.Terminology">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.terminology"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.Language">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.language"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.WordStr">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.wordStr"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.GameType">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.gameType"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.UserName">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.userName"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.ConnectionID">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.connectionID"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.IsLoading">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.isLoading"/>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.WordList">
+            <inheritdoc cref="F:HangMan.ViewModels.OnlineViewModel.wordList"/>
+        </member>
+        <member name="F:HangMan.ViewModels.OnlineViewModel.createGameCommand">
+            <summary>The backing field for <see cref="P:HangMan.ViewModels.OnlineViewModel.CreateGameCommand"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.CreateGameCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.OnlineViewModel.CreateGame"/>.</summary>
+        </member>
+        <member name="F:HangMan.ViewModels.OnlineViewModel.joinGameCommand">
+            <summary>The backing field for <see cref="P:HangMan.ViewModels.OnlineViewModel.JoinGameCommand"/>.</summary>
+        </member>
+        <member name="P:HangMan.ViewModels.OnlineViewModel.JoinGameCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:HangMan.ViewModels.OnlineViewModel.JoinGame"/>.</summary>
         </member>
         <member name="T:CommunityToolkit.Maui.Markup.TextAlignmentExtensions_EntryCell">
             <summary>

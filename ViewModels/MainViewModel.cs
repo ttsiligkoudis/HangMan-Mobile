@@ -13,41 +13,41 @@ namespace HangMan.ViewModels
         private Language language;
 
         [ObservableProperty]
-        private bool isChecked;
+        private string wordStr;
 
         [ObservableProperty]
-        private string wordStr;
+        private GameType gameType;
+
+        [ObservableProperty]
+        private bool isLoading;
+
+        [ObservableProperty]
+        private List<string> wordList;
 
         public MainViewModel()
         {
-            Language = Language.English;
-            Terminology = new(Language, false);
+            var language = Preferences.Get(nameof(Language), null);
+            Language = !string.IsNullOrEmpty(language) ? Enum.Parse<Language>(language) : Language.English;
+            Terminology = new(Language);
         }
 
         [RelayCommand]
-        void LanguageToEnglish()
+        async Task Navigate()
         {
-            Language = Language.English;
-            Terminology = new(Language, Terminology.Checked);
-        }
-
-        [RelayCommand]
-        void LanguageToGreek()
-        {
-            Language = Language.Greek;
-            Terminology = new(Language, Terminology.Checked);
-        }
-
-        [RelayCommand]
-        Task Navigate() =>
-            Shell.Current.GoToAsync(nameof(GamePage),
+            IsLoading = true;
+            WordList = StreamReaderHelper.GetWordList(Terminology);
+            IsLoading = false;
+            await Shell.Current.GoToAsync(nameof(GamePage),
                 new Dictionary<string, object>
                 {
                     [nameof(Terminology)] = Terminology,
                     [nameof(Language)] = Language,
-                    [nameof(IsChecked)] = IsChecked,
-                    [nameof(WordStr)] = WordStr
+                    [nameof(WordStr)] = WordStr,
+                    [nameof(GameType)] = GameType.Local,
+                    [nameof(WordList)] = WordList
                 });
+        }
+            
 
         [RelayCommand]
         Task NavigateOnline() =>
@@ -57,5 +57,6 @@ namespace HangMan.ViewModels
                     [nameof(Terminology)] = Terminology,
                     [nameof(Language)] = Language
                 });
+            
     }
 }

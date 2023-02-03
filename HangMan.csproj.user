@@ -19,13 +19,13 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="GamePage.xaml">
+    <MauiXaml Update="Pages\GamePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="OnlineGamePage.xaml">
+    <MauiXaml Update="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="OnlinePage.xaml">
+    <MauiXaml Update="Pages\OnlinePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

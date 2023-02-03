@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:HangMan.ViewModels"
+             x:Class="HangMan.OnlinePage"
+             x:DataType="viewmodel:OnlineViewModel"
+             x:Name="ContentPage"
+             Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+             Title="Online Page">
+    <VerticalStackLayout
+        Spacing="20"
+        VerticalOptions="Center">
+        <Label
+            Text="{Binding Terminology.UserNameLabel}"
+            SemanticProperties.HeadingLevel="Level3"
+            SemanticProperties.Description="fill this with your User Name"
+            FontSize="17"
+            HorizontalOptions="Center" 
+            TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+        <Frame
+            HorizontalOptions="Center" 
+            Padding="0"
+            HeightRequest="45"
+            Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+            BorderColor="{AppThemeBinding Light=#282828, Dark=White, Default=#282828}">
+        <Entry 
+            Text="{Binding UserName}"
+            MinimumWidthRequest="130"
+            SemanticProperties.HeadingLevel="Level3"
+            SemanticProperties.Description="User Name entry"
+            FontSize="14"
+            Margin="10,0"
+            TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+        </Frame>
+
+        <Label
+            Text="{Binding Terminology.CreateLabel}"
+            SemanticProperties.HeadingLevel="Level3"
+            SemanticProperties.Description="Create Online Game"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="17"
+            TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+        <Button
+            x:Name="Create"
+            Text="{Binding Terminology.Create}"
+            SemanticProperties.Hint="Create a game"
+            Command="{Binding CreateGameCommand}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Background="#512BD4"
+            TextColor="White" />
+        
+        <ActivityIndicator 
+            x:Name="ActIndicator"
+            IsRunning="True"
+            IsVisible="{Binding IsLoading}"/>
+        
+        <Label
+            Text="{Binding Terminology.Or}"
+            SemanticProperties.HeadingLevel="Level3"
+            SemanticProperties.Description="OR"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="17"
+            TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+        
+        <Label
+            Text="{Binding Terminology.ConnectionLabel}"
+            SemanticProperties.HeadingLevel="Level3"
+            SemanticProperties.Description="fill this with an ID to join a room"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="17"
+            TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+        <Frame
+            HorizontalOptions="Center" 
+            Padding="0"
+            HeightRequest="45"
+            Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+            BorderColor="{AppThemeBinding Light=#282828, Dark=White, Default=#282828}">
+        <Entry 
+            x:Name="ConnectionID"
+            Text="{Binding ConnectionID}"
+            MinimumWidthRequest="130"
+            SemanticProperties.HeadingLevel="Level3"
+            SemanticProperties.Description="Connection ID entry"
+            FontSize="14"
+            Margin="10,0"
+            TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+        </Frame>
+
+        <Button
+            x:Name="Join"
+            Text="{Binding Terminology.Join}"
+            SemanticProperties.Hint="Join a game"
+            Command="{Binding JoinGameCommand}"
+            Margin="5"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="100"
+            HeightRequest="50"
+            Background="#512BD4"
+            TextColor="White" />
+
+    </VerticalStackLayout>
+</ContentPage>

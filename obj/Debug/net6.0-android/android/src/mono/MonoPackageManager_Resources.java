@@ -28,6 +28,8 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Extensions.Options.dll",
 		"Microsoft.Extensions.Primitives.dll",
 		"Microsoft.Maui.Graphics.dll",
+		"Newtonsoft.Json.dll",
+		"Newtonsoft.Json.Bson.dll",
 		"System.IO.Pipelines.dll",
 		"System.Text.Encodings.Web.dll",
 		"System.Text.Json.dll",

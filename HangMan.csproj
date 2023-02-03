@@ -61,22 +61,29 @@
 	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.1" />
+	  <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="GamePage.xaml.cs">
-	    <DependentUpon>GamePage.xaml</DependentUpon>
+	  <Compile Update="Pages\GamePage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\MainPage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\OnlinePage.xaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="GamePage.xaml">
+	  <MauiXaml Update="Pages\GamePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="OnlineGamePage.xaml">
+	  <MauiXaml Update="Pages\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="OnlinePage.xaml">
+	  <MauiXaml Update="Pages\OnlinePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

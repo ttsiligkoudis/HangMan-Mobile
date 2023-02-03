@@ -5,4 +5,11 @@
         English,
         Greek
     }
+
+    public enum GameType
+    {
+        Local,
+        Host,
+        Join
+    }
 }

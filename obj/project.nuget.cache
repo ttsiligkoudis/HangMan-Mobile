@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WD+Dy5ecTiv5XRt1qnt3njA/OG9kwUgdOmEhDNuzWNYRcnClJN0bCSYmelLMzrM1NKQYj7uiWnQuT9lbV26RFA==",
+  "dgSpecHash": "pDY4TG5CZu3DcakBXGi4cyi1q9izqoxfxnZvIxEijmwPEs2qOaN9VYzqjHSgtxD12T4njq1JOGm/EKVrw7yPgw==",
   "success": true,
   "projectFilePath": "C:\\github\\HangMan-Mobile\\HangMan.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,8 @@
     "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\6.0.501\\microsoft.maui.graphics.win2d.winui.desktop.6.0.501.nupkg.sha512",
     "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
     "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\microsoft.windowsappsdk\\1.1.3\\microsoft.windowsappsdk.1.1.3.nupkg.sha512",
+    "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\ThemisTsiligkoudis\\.nuget\\packages\\system.runtime.interopservices.nfloat.internal\\6.0.1\\system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",

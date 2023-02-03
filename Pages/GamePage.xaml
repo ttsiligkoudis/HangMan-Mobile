@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:HangMan.ViewModels"
+             x:Class="HangMan.GamePage"
+             x:DataType="viewmodel:GameViewModel"
+             x:Name="ContentPage"
+             Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+             Title="{Binding Terminology.Title}">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding BackCommand}"></BackButtonBehavior>
+    </Shell.BackButtonBehavior>
+    <ScrollView>
+        <StackLayout
+            HorizontalOptions="Center">
+            <HorizontalStackLayout
+                HorizontalOptions="Center">
+                <Frame
+                    x:Name="Chat"
+                    WidthRequest="200"
+                    Padding="0"
+                    Margin="0,20"
+                    Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+                    BorderColor="{AppThemeBinding Light=#282828, Dark=White, Default=#282828}">
+                    <VerticalStackLayout
+                        Spacing="0"
+                        Padding="0"
+                        Margin="0"
+                        VerticalOptions="Center">
+                        <Label
+                            x:Name="ChatMessages"
+                            WidthRequest="190"
+                            Padding="0"
+                            Margin="0"
+                            FontSize="13"
+                            Text="{Binding ChatMessages}"
+                            HorizontalOptions="Center"
+                            TextType="Html" />
+                        <Entry
+                            Placeholder="Type your message"
+                            Text="{Binding MyChatMessage}"
+                            HorizontalTextAlignment="Center"
+                            FontSize="13"
+                            WidthRequest="150"
+                            HorizontalOptions="Center" />
+                        <Button
+                            Text="Send"
+                            Command="{Binding SendMessageCommand}"
+                            HorizontalOptions="Center"
+                            Background="#512BD4"
+                            TextColor="White" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <VerticalStackLayout
+                    Spacing="0"
+                    Padding="0"
+                    Margin="0">
+                    <Frame
+                        x:Name="Copy"
+                        CornerRadius="10"
+                        HeightRequest="30"
+                        WidthRequest="30"
+                        Padding="0"
+                        Margin="0,20,0,0"
+                        HorizontalOptions="End"
+                        BorderColor="{AppThemeBinding Light=#282828, Dark=White, Default=#282828}">
+                        <ImageButton 
+                            Source="copy_link.jpg"
+                            Command="{Binding CopyIDCommand}"
+                            CornerRadius="10"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            Padding="1"
+                            HorizontalOptions="Center" />
+                    </Frame>
+                    <Image 
+                        x:Name="HangManImage"
+                        Source="{Binding ImageSource}"
+                        Margin="0,0,0,20" 
+                        HeightRequest="210"
+                        WidthRequest="170"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+                
+            </HorizontalStackLayout>
+
+            <Label
+                x:Name="LivesLabel"
+                Text="{Binding LivesLabel}"
+                SemanticProperties.HeadingLevel="Level3"
+                SemanticProperties.Description="Remaining Lives"
+                FontSize="18"
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}"
+                HorizontalOptions="Center" />
+
+            <ActivityIndicator 
+                x:Name="ActIndicator"
+                IsRunning="True"
+                IsVisible="{Binding IsLoading}"/>
+
+            <StackLayout 
+                HorizontalOptions="Center"
+                VerticalOptions="End">
+                <HorizontalStackLayout 
+                    x:Name="WordArea" 
+                    BindingContext="{Binding WordArea, Mode=TwoWay}"
+                    HorizontalOptions="Center"
+                    Margin="0,20" />
+                <HorizontalStackLayout 
+                    x:Name="FirstRow"
+                    BindingContext="{Binding FirstRow, Mode=TwoWay}"
+                    HorizontalOptions="Center" />
+                <HorizontalStackLayout 
+                    x:Name="SecondRow"
+                    BindingContext="{Binding SecondRow, Mode=TwoWay}"
+                    HorizontalOptions="Center" />
+                <HorizontalStackLayout 
+                    x:Name="ThirdRow"
+                    BindingContext="{Binding ThirdRow, Mode=TwoWay}"
+                    HorizontalOptions="Center" />
+            </StackLayout>
+
+            <Label
+                x:Name="WordLabel"
+                Text="{Binding Terminology.StrLabel}"
+                SemanticProperties.HeadingLevel="Level3"
+                FontSize="16"
+                Margin="20,20,20,10"
+                HorizontalOptions="Center"
+                TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+
+            <Frame
+                x:Name="WordFrame"
+                HorizontalOptions="Center" 
+                Padding="0"
+                Margin="20,10,20,20"
+                HeightRequest="45"
+                Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
+                BorderColor="{AppThemeBinding Light=#282828, Dark=White, Default=#282828}">
+                <Entry 
+                    x:Name="WordStr"
+                    Text="{Binding WordStr}"
+                    IsPassword="True"
+                    MinimumWidthRequest="130"
+                    TextChanged="Entry_TextChanged"
+                    SemanticProperties.HeadingLevel="Level3"
+                    SemanticProperties.Description="fill this if you want to use your own word"
+                    FontSize="14"
+                    Margin="10,0"
+                    TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+            </Frame>
+
+            <Button
+                x:Name="ResetBtn"
+                Text="{Binding Terminology.NewGame}"
+                SemanticProperties.Hint="Starts a new Game"
+                Command="{Binding ResetGameCommand}"
+                VerticalOptions="EndAndExpand"
+                CornerRadius="0"
+                FontSize="18"
+                Padding="70,15"
+                Background="#512BD4"
+                TextColor="White"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

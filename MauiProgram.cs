@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui.Markup;
+using HangMan.Helpers;
 using HangMan.ViewModels;
+using Microsoft.Extensions.Configuration;
 
 namespace HangMan;
 
@@ -20,12 +22,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainViewModel>();
         builder.Services.AddTransient<GameViewModel>();
         builder.Services.AddTransient<OnlineViewModel>();
-        builder.Services.AddTransient<OnlineGameViewModel>();
 
         builder.Services.AddSingleton<MainPage>();
         builder.Services.AddTransient<GamePage>();
         builder.Services.AddTransient<OnlinePage>();
-        builder.Services.AddTransient<OnlineGamePage>();
+
+        builder.Services.AddSingleton<IAlertService, AlertService>();
 
         var app = builder.Build();
 
