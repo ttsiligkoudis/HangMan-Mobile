@@ -19,7 +19,7 @@
 	.zero	3
 	.xword	.L.compressed_assembly_data.1	// data
 
-	.word	0x77200	// uncompressed_file_size
+	.word	0x77400	// uncompressed_file_size
 	.byte	0x0	// loaded
 	.zero	3
 	.xword	.L.compressed_assembly_data.2	// data

@@ -28,9 +28,15 @@ public partial class GamePage : ContentPage
         vm.ConnectionInit();
         vm.InitializeGame();
     }
+
     private void Entry_TextChanged(object sender, TextChangedEventArgs e)
     {
         if (!string.IsNullOrEmpty(WordStr.Text))
             WordStr.Text = WordStr.Text.Trim().ToUpper();
+    }
+
+    private void PassVisibilityBtn_Clicked(object sender, EventArgs e)
+    {
+        WordStr.IsPassword = !WordStr.IsPassword;
     }
 }

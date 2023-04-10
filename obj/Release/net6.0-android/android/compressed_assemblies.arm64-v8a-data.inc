@@ -8,7 +8,7 @@
 
 	.type	.L.compressed_assembly_data.2, @object
 	.local	.L.compressed_assembly_data.2
-	.comm	.L.compressed_assembly_data.2, 487936, 16
+	.comm	.L.compressed_assembly_data.2, 488448, 16
 
 	.type	.L.compressed_assembly_data.3, @object
 	.local	.L.compressed_assembly_data.3

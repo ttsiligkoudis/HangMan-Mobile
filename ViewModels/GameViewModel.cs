@@ -113,7 +113,7 @@ namespace HangMan.ViewModels
         [RelayCommand]
         async void SendMessage()
         {
-            if (_connection != null && !string.IsNullOrEmpty(_connection.ConnectionId) && _connection.State == HubConnectionState.Connected)
+            if (_connection != null && !string.IsNullOrEmpty(_connection.ConnectionId) && _connection.State == HubConnectionState.Connected && !string.IsNullOrEmpty(MyChatMessage))
                 await _connection.InvokeCoreAsync("SendMessageToRoom", args: new[] { UserName, MyChatMessage, ConnectionID });
             MyChatMessage = string.Empty;
         }
@@ -171,6 +171,8 @@ namespace HangMan.ViewModels
                 if (GameType == GameType.Host)
                 {
                     ConnectionID = Guid.NewGuid().ToString();
+                    var maxLength = 8;
+                    ConnectionID = ConnectionID.Substring(0, ConnectionID.Length > maxLength ? maxLength : ConnectionID.Length);
 
                     #if DEBUG
                         ConnectionID = "1234";

@@ -23,6 +23,11 @@ public partial class MainPage : ContentPage
             WordStr.Text = WordStr.Text.Trim().ToUpper();
     }
 
+    private void PassVisibilityBtn_Clicked(object sender, EventArgs e)
+    {
+        WordStr.IsPassword = !WordStr.IsPassword;
+    }
+
     private void LngButton_Clicked(object sender, EventArgs e)
     {
         var btn = sender as Button;

@@ -65,6 +65,7 @@ namespace HangMan.ViewModels
                     {
                         WordStr = word;
                         Language = Enum.Parse<Language>(language);
+                        Terminology = new Terminology(Language);
                         ConnectionEstablished = true;
                         var action = () => JoinGameAsync();
                         MainThread.BeginInvokeOnMainThread(action);
@@ -88,7 +89,7 @@ namespace HangMan.ViewModels
             if (await CheckNameifValid())
             {
                 IsLoading = true;
-                await _connection.DisposeAsync();
+                _connection.DisposeAsync();
                 _connection = null;
                 WordList = StreamReaderHelper.GetWordList(Terminology);
                 IsLoading = false;
@@ -129,7 +130,7 @@ namespace HangMan.ViewModels
             if (ConnectionEstablished && ConnectionHelper.ConnectionEstablished(_connection))
             {
                 await _connection.InvokeCoreAsync("SendMessageToRoom", args: new[] { UserName, "Joined the Room", ConnectionID });
-                await _connection.DisposeAsync();
+                _connection.DisposeAsync();
                 _connection = null;
                 IsLoading = false;
 

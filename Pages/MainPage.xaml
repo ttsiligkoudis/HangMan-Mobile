@@ -95,7 +95,8 @@
                 HeightRequest="45"
                 Background="{AppThemeBinding Light=White, Dark=#282828, Default=White}"
                 BorderColor="{AppThemeBinding Light=#282828, Dark=White, Default=#282828}">
-                <Entry 
+                <HorizontalStackLayout>
+                    <Entry 
                     x:Name="WordStr"
                     Text="{Binding WordStr}"
                     IsPassword="True"
@@ -106,6 +107,8 @@
                     FontSize="14"
                     Margin="10,0"
                     TextColor="{AppThemeBinding Light=Black, Dark=White, Default=Black}" />
+                    <Button Text="👁" Background="Transparent" TextColor="Gray" Clicked="PassVisibilityBtn_Clicked"/>
+                </HorizontalStackLayout>
             </Frame>
 
             <Button
